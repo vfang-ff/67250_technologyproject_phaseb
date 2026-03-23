@@ -70,3 +70,12 @@ function greeting(hours) {
 }
 
 greeting(hours);
+
+function addYear() {
+    var yearElement = document.getElementById("copyYear");
+    if (yearElement) {
+            var currentYear = new Date().getFullYear();
+            yearElement.innerHTML = "© " + currentYear + " MonoMuse. All rights reserved.";
+        }
+}
+    
