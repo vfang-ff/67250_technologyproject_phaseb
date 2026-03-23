@@ -68,6 +68,5 @@ function greeting(hours) {
         } 
     }
 }
-    
 
 greeting(hours);
