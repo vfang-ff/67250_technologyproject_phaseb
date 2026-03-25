@@ -5,36 +5,45 @@
     <link rel="stylesheet" href="../static/style.css">
     <script src="../static/script.js" defer></script>
     
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    
     <title>Exhibitions Page</title>
 
 </head>
 
 <body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo"> 
+            <h1>Exhibitions</h1>
+        </header>
 
-<header>
-    <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo"> 
-    <h1>Exhibitions</h1>
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+        <main class="main">
+            <h3>Exhibition 1</h3>
+            <p>abc</p>
 
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="explore.html">Explore</a>
-        <a id="navselected" href="exhibitions.html">Exhibitions</a>
-        <a href="tickets.html">Tickets</a>
-        <a href="checkout.html">Checkout</a>
-    </nav>
-</header>
-    <h3>Exhibition 1</h3>
-    <p>abc</p>
+            <h3>Exhibition 2</h3>
+            <p>abc</p>
+        </main>
 
-    <h3>Exhibition 2</h3>
-    <p>abc</p>
+        <!-- <figure class="main_img">
+                <img src="../static/museum.jpg" alt="museum image">
+        </figure> -->
 
-<footer>
-    <p id="copyYear"></p>
-    MonoMuse. All rights reserved.
-</footer>
-
+        <footer class="footer">
+            <p id="copyYear"></p>
+            <!-- MonoMuse. All rights reserved. -->
+        </footer>
+    </div>
 </body>
+</html>
 
 
 

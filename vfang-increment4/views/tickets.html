@@ -5,56 +5,75 @@
     <link rel="stylesheet" href="../static/style.css">
     <script src="../static/script.js" defer></script>
 
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    
     <title>Tickets</title>
 
 </head>
 
 <body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo"> 
+            <h1>Tickets Page</h1>
+        </header>
 
-<header>
-    <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo"> 
-    <h1>Tickets Page</h1>
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+        
+        <main class="main">
+            <h3>Buy Tickets</h3>
 
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="explore.html">Explore</a>
-        <a href="exhibitions.html">Exhibitions</a>
-        <a id="navselected" href="tickets.html">Tickets</a>
-        <a href="checkout.html">Checkout</a>
-    </nav>
-</header>
-    <table>
-        <!-- <caption>Ticket Types and Prices</caption> -->
-    <tr>
-        <th>Ticket Type</th>
-        <th>Description</th>
-        <th>Price</th>
-    </tr>
-    <tr>
-        <td>Adult</td>
-        <td>General admission for ages 18 and over. Under 18 free of charge</td>
-        <td>$18</td>
-    </tr>
-    <tr>
-        <td>Student</td>
-        <td>Student ID required</td>
-        <td>$10</td>
-    </tr>
-    <tr>
-        <td>Member</td>
-        <td>Member ID required</td>
-        <td>$15</td>
-    </tr>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>March 30</td>
+                    <td>10:00 AM</td>
+                    <td>$15</td>
+                    <td><button onclick="showForm('March 30')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>April 2</td>
+                    <td>1:00 PM</td>
+                    <td>$15</td>
+                    <td><button onclick="showForm('April 2')">Buy Now</button></td>
+                </tr>
+            </table>
 
-    </table>
+            <form id="purchaseForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
 
-<footer>
-    <p id="copyYear"></p>
-    MonoMuse. All rights reserved.
-</footer>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="tickets">Number of Tickets:</label>
+                <input type="number" id="tickets" name="tickets">
+
+                <label for="selectedDate">Selected Date:</label>
+                <input type="text" id="selectedDate" name="selectedDate" readonly>
+
+                <button type="button" onclick="submitPurchase()">Submit</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+            <!-- MonoMuse. All rights reserved. -->
+        </footer>
+    </div>
 </body>
-
-
+</html>
 
 
 
