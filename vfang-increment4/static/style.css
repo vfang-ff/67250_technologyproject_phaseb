@@ -109,6 +109,8 @@ button {
 }
 .nav_bar {
    grid-area: nav_bar; 
+   display: flex; /* Uses Flexbox for internal layout */
+   justify-content: center;   /* Right aligns the content */
 }
 .main {
   grid-area: main; 
@@ -120,17 +122,21 @@ button {
    grid-area: footer;
 }
 
-.nav_bar {
-   grid-area: nav_bar;
-   display: flex; /* Uses Flexbox for internal layout */
-   justify-content: center;   /* Right aligns the content */
-}
 
 #longIntro, #readLess {
   display: none;
 }
 
 @media (max-width: 650px) {
-   /* Your CSS code for the mobile layout */
+
+
+  .container {
+    grid-template-areas:
+      'header'
+      'nav_bar'
+      'main'
+      'main-img'
+      'footer';
+  }
 }
 
