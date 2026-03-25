@@ -42,15 +42,15 @@ nav a:hover {
   border-color: #4d5c3b;
   }
 
-#navselected {
+  #navselected {
   color: #588d53;
 }
 
-#copyYear {
+footer {
   border-top: 1px solid rgba(245,245,247,.12);
   padding: 18px 16px;
   text-align: center;
-  color: #0b0b0c;
+  color: rgba(245,245,247,.72);
   font-size: 14px;
   }
 
@@ -68,12 +68,6 @@ tr:nth-child(even) {
 
 
 form * {
-  display: block;
-  margin-left: 0;
-  /* margin: auto; */
+  margin: auto;
   /* text-align: center; */
-}
-
-button {
-  margin-top: 15px;
 }
