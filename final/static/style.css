@@ -1,0 +1,484 @@
+/* ── CSS Variables ── */
+:root {
+  --black: #0a0a0a;
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --bg: #111111;
+  --surface: #1a1a1a;
+  --surface2: #222222;
+  --text: #f0f0f0;
+  --text-muted: #999999;
+  --border: #2e2e2e;
+}
+
+* {
+  padding: 5px;
+  margin: 5px;
+  color: var(--text);
+  font-family: Helvetica, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+}
+
+#logo {
+  width: 120px;
+  display: block;
+}
+
+/* ── Header ── */
+.header {
+  grid-area: header;
+  background: var(--black);
+  border-bottom: 2px solid var(--gold);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+
+.header-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Nav ── */
+.nav_bar {
+  grid-area: nav_bar;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 6px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 400;
+  padding: 8px 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.active {
+  color: var(--gold) !important;
+  font-weight: 700;
+}
+
+/* ── Hamburger (hidden on desktop) ── */
+#hamburger {
+  display: none;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin: 0;
+  color: var(--gold);
+  line-height: 1;
+}
+
+/* ── Main ── */
+.main {
+  grid-area: main;
+  background: var(--bg);
+  padding: 24px 28px;
+}
+
+.main h2, .main h3 {
+  color: var(--gold);
+}
+
+/* ── Buy Tickets button ── */
+#buyTickets {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-weight: 600;
+  background-color: var(--gold);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+#buyTickets:hover {
+  background-color: var(--gold-light);
+  color: var(--black);
+}
+
+/* ── Buttons ── */
+button {
+  margin-top: 15px;
+  padding: 10px 24px;
+  background-color: var(--gold);
+  color: var(--black);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: var(--gold-light);
+}
+
+/* ── Read More/Less ── */
+#longIntro, #readLess {
+  display: none;
+}
+
+/* ── Table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: var(--gold);
+  color: var(--black);
+  font-weight: 700;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+td {
+  padding: 10px 16px;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+tr:nth-child(even) td {
+  background-color: var(--surface2);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Forms ── */
+form * {
+  display: block;
+  margin-left: 0;
+}
+
+label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 9px 12px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+input[readonly] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#purchaseForm {
+  display: none;
+  margin-top: 20px;
+  background: var(--surface);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* ── Checkout steps ── */
+.checkout-step {
+  background: var(--surface);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-top: 16px;
+}
+
+.checkout-step h3 {
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.checkout-step input {
+  width: 100%;
+  max-width: 400px;
+  padding: 9px 12px;
+  margin-top: 4px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.checkout-step input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.field-hint {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+.required-star { color: #e74c3c; }
+
+.error-msg {
+  background-color: #2a0f0f;
+  border: 1px solid #e74c3c;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #f08080;
+}
+
+/* ── Exhibition cards ── */
+.exhibition-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-left: 4px solid var(--gold);
+}
+
+.exhibition-card h3 {
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.exhibit-dates {
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+/* ── main_img grid area ── */
+.main_img {
+  grid-area: main-img;
+  background: var(--bg);
+  padding: 24px 16px;
+}
+
+.video-section.main_img h3 {
+  color: var(--gold);
+}
+
+.video-section.main_img .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.video-section.main_img .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Map: use fixed pixel height, not % of parent */
+.map-side {
+  grid-area: main-img;
+  background: var(--bg);
+  padding: 24px 16px;
+}
+
+.map-side #map {
+  width: 100%;
+  height: 420px;
+  border-radius: 12px;
+  border: 2px solid var(--gold);
+  z-index: 0;
+}
+
+/* ── Footer ── */
+.footer {
+  grid-area: footer;
+  background: var(--black);
+  border-top: 2px solid var(--gold);
+}
+
+#copyYear {
+  padding: 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ── Grid ── */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'header header'
+    'nav_bar nav_bar'
+    'main main-img'
+    'footer footer';
+  min-height: 100vh;
+}
+
+/* ── Read More/Less ── */
+#longIntro, #readLess {
+  display: none;
+}
+
+/* ═══════════════════════════════
+   MOBILE  ≤ 650px
+═══════════════════════════════ */
+@media (max-width: 650px) {
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'nav_bar'
+      'main'
+      'main-img'
+      'footer';
+  }
+
+  .header { flex-wrap: wrap; gap: 10px; padding: 12px 14px; }
+  .header h1 { font-size: 1.1rem; }
+  #logo { width: 70px; }
+
+  #hamburger { display: block; margin-bottom: 4px; }
+
+  .nav_bar { flex-direction: column; align-items: flex-start; padding: 0 12px; }
+
+  .nav_bar a {
+    display: none;
+    width: 100%;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    font-size: 1rem;
+  }
+
+  .nav_bar a:first-of-type { display: block; }
+  .nav_bar.responsive a { display: block; }
+
+  .main { padding: 16px 14px; }
+
+  #buyTickets { display: block; text-align: center; padding: 12px; font-size: 1rem; }
+
+  table { display: block; overflow-x: auto; white-space: nowrap; font-size: 0.9rem; }
+
+  input[type="text"], input[type="email"], input[type="number"],
+  .checkout-step input { max-width: 100%; font-size: 1rem; }
+
+  button { width: 100%; padding: 12px; font-size: 1rem; }
+
+  .main_img, .map-side { padding: 12px 14px; }
+
+  .map-side #map { height: 260px; }
+}
+
+/* ── Confirmation box (checkout page) ── */
+.confirmation-box {
+  background: var(--surface);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin-top: 20px;
+  max-width: 500px;
+}
+
+.confirmation-icon {
+  font-size: 2.5rem;
+  margin: 0 0 8px 0;
+}
+
+.confirmation-box h3 {
+  color: var(--gold);
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.confirmation-details {
+  background: var(--surface2);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.confirm-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.confirm-row:last-child {
+  border-bottom: none;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.confirm-label {
+  color: var(--text-muted);
+}
+
+.confirmation-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}

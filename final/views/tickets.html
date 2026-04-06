@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="../static/script.js" defer></script>
+    <title>Tickets — The Hip-Hop Dance Museum</title>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/hiphopmuseumlogo.png" alt="The Hip-Hop Dance Museum Logo">
+            <div>
+                <h1>The Hip-Hop Dance Museum</h1>
+                <p class="header-sub">Bronx, New York City</p>
+            </div>
+        </header>
+
+        <nav class="nav_bar">
+            <button id="hamburger" onclick="toggleNav()">&#9776;</button>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+
+        <main class="main">
+            <h2>Buy Tickets</h2>
+            <p>Select a date below, then fill in your details to complete your purchase. General admission is $15 per person.</p>
+
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Price</th>
+                    <th>Tickets</th>
+                </tr>
+                <tr>
+                    <td>April 12, 2026</td>
+                    <td>10:00 AM</td>
+                    <td>$15</td>
+                    <td><button onclick="showForm('April 12, 2026')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>April 18, 2026</td>
+                    <td>1:00 PM</td>
+                    <td>$15</td>
+                    <td><button onclick="showForm('April 18, 2026')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>April 25, 2026</td>
+                    <td>11:00 AM</td>
+                    <td>$15</td>
+                    <td><button onclick="showForm('April 25, 2026')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>May 3, 2026</td>
+                    <td>2:00 PM</td>
+                    <td>$15</td>
+                    <td><button onclick="showForm('May 3, 2026')">Buy Now</button></td>
+                </tr>
+            </table>
+
+            <form id="purchaseForm">
+                <h3>Your Details</h3>
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Vanessa Fang">
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="e.g. vanessa@email.com">
+
+                <label for="tickets">Number of Tickets (max 10)</label>
+                <input type="number" id="tickets" name="tickets" min="1" max="10" placeholder="Enter a number">
+
+                <label for="selectedDate">Selected Date</label>
+                <input type="text" id="selectedDate" name="selectedDate" readonly>
+
+                <button type="button" onclick="submitPurchase()">Confirm Purchase →</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>
+

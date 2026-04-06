@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../static/script.js" defer></script>
+    <title>Explore — The Hip-Hop Dance Museum</title>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/hiphopmuseumlogo.png" alt="The Hip-Hop Dance Museum Logo">
+            <div>
+                <h1>The Hip-Hop Dance Museum</h1>
+                <p class="header-sub">Bronx, New York City</p>
+            </div>
+        </header>
+
+        <nav class="nav_bar">
+            <button id="hamburger" onclick="toggleNav()">&#9776;</button>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+
+        <main class="main">
+            <h2>Explore the Museum</h2>
+
+            <p>
+                The Hip-Hop Dance Museum was founded in 2016 with a single mission: to preserve, celebrate, and share the legacy of hip-hop dance with the world. Rooted in the Bronx — where it all began — we are a living archive of movement, culture, and community.
+            </p>
+
+            <ul>
+                <li>Founded in 2016 in the South Bronx, New York City</li>
+                <li>Dedicated entirely to hip-hop dance history and culture</li>
+                <li>Home to 5 permanent galleries and rotating international exhibitions</li>
+                <li>Features live performance spaces, archival footage, and interactive installations</li>
+                <li>Welcomes over 200,000 visitors annually</li>
+            </ul>
+
+            <h3>Find Us</h3>
+            <p>We are located in the heart of the South Bronx. Come visit us!</p>
+            <p>Address: 1 Hip-Hop Plaza, Bronx, NY 10451</p>
+        </main>
+
+        <div class="main_img map-side">
+            <div id="map"></div>
+        </div>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+
+    <script>
+        var map = L.map('map').setView([40.8448, -73.8648], 15);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([40.8448, -73.8648])
+            .addTo(map)
+            .bindPopup('<strong>The Hip-Hop Dance Museum</strong><br>1 Hip-Hop Plaza, Bronx, NY')
+            .openPopup();
+    </script>
+</body>
+</html>

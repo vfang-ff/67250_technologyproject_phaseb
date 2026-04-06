@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="../static/script.js" defer></script>
+    <title>Checkout — The Hip-Hop Dance Museum</title>
+</head>
+
+<body onload="addYear(); loadConfirmation();">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/hiphopmuseumlogo.png" alt="The Hip-Hop Dance Museum Logo">
+            <div>
+                <h1>The Hip-Hop Dance Museum</h1>
+                <p class="header-sub">Bronx, New York City</p>
+            </div>
+        </header>
+
+        <nav class="nav_bar">
+            <button id="hamburger" onclick="toggleNav()">&#9776;</button>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+
+        <main class="main">
+            <h2>Order Confirmation</h2>
+
+            <div class="confirmation-box" id="confirmationBox">
+                <p class="confirmation-icon">🎉</p>
+                <h3>You're going to the museum!</h3>
+                <p>Thank you, <strong id="confirm-name"></strong>. Your order has been received.</p>
+
+                <div class="confirmation-details">
+                    <div class="confirm-row">
+                        <span class="confirm-label">Date</span>
+                        <span id="confirm-date"></span>
+                    </div>
+                    <div class="confirm-row">
+                        <span class="confirm-label">Tickets</span>
+                        <span id="confirm-tickets"></span>
+                    </div>
+                    <div class="confirm-row">
+                        <span class="confirm-label">Total</span>
+                        <span id="confirm-total"></span>
+                    </div>
+                </div>
+
+                <p class="confirmation-note">A confirmation will be sent to your email. We look forward to seeing you!</p>
+                <a id="buyTickets" href="tickets.html">Buy More Tickets</a>
+            </div>
+
+            <!-- Shown if user navigates here directly without buying -->
+            <div id="noOrder" style="display:none;">
+                <p>No order found. Please go to the <a href="tickets.html" style="color: var(--gold);">Tickets page</a> to make a purchase.</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+
+    <script>
+        function loadConfirmation() {
+            var params = new URLSearchParams(window.location.search);
+            var name = params.get("name");
+            var tickets = params.get("tickets");
+            var date = params.get("date");
+
+            if (!name || !tickets || !date) {
+                document.getElementById("confirmationBox").style.display = "none";
+                document.getElementById("noOrder").style.display = "block";
+                return;
+            }
+
+            document.getElementById("confirm-name").textContent = name;
+            document.getElementById("confirm-date").textContent = date;
+            document.getElementById("confirm-tickets").textContent = tickets + (tickets == 1 ? " ticket" : " tickets");
+            document.getElementById("confirm-total").textContent = "$" + (parseInt(tickets) * 15);
+        }
+    </script>
+</body>
+</html>
