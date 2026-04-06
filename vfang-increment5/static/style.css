@@ -1,0 +1,358 @@
+* {
+  padding: 5px;
+  margin: 5px;
+  color: #0b0b0c;
+  font-family: Helvetica, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+#logo {
+  width: 13%;
+  display: block;
+}
+
+body {
+  background: #f5f5f7;
+}
+
+/* ── Header ── */
+.header-sub {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+  padding: 0 5px;
+}
+
+/* ── Buy Tickets button ── */
+#buyTickets {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-weight: 350;
+  background-color: #588d53;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+/* ── Nav ── */
+nav a {
+  text-decoration: none;
+  color: #0b0b0c;
+  font-weight: 350;
+  padding: 8px 20px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+}
+
+nav a:hover {
+  border-color: #4d5c3b;
+}
+
+.active {
+  color: #588d53;
+  font-weight: bold;
+}
+
+/* ── Footer ── */
+#copyYear {
+  border-top: 1px solid rgba(11,11,12,.12);
+  padding: 18px 16px;
+  text-align: center;
+  color: #0b0b0c;
+  font-size: 14px;
+}
+
+/* ── Table ── */
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+tr:nth-child(even) {
+  background-color: #b3d7b3;
+}
+
+/* ── Forms ── */
+form * {
+  display: block;
+  margin-left: 0;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 24px;
+  background-color: #588d53;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+button:hover {
+  background-color: #4d5c3b;
+}
+
+#purchaseForm {
+  display: none;
+  margin-top: 20px;
+}
+
+/* ── Field hints (checkout) ── */
+.field-hint {
+  display: block;
+  font-size: 0.82rem;
+  color: #666;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+.required-star {
+  color: #c0392b;
+}
+
+.error-msg {
+  background-color: #fde8e8;
+  border: 1px solid #e74c3c;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #c0392b;
+}
+
+.checkout-step input {
+  width: 100%;
+  max-width: 400px;
+  padding: 9px 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+/* ── Exhibition cards ── */
+.exhibition-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-left: 4px solid #588d53;
+}
+
+.exhibit-dates {
+  font-size: 0.85rem;
+  color: #588d53;
+  font-weight: bold;
+  margin: 0 0 6px 0;
+}
+
+/* ── YouTube video embed ── */
+
+/* ── main_img grid area (image, video, or map) ── */
+.main_img {
+  padding: 12px;
+}
+
+.main_img img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Video sitting in main_img area */
+.video-section.main_img .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-section.main_img .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Map sitting in main_img area */
+.map-side #map {
+  height: 100%;
+  min-height: 380px;
+  width: 100%;
+  border-radius: 12px;
+  z-index: 0;
+}
+
+/* ── Grid layout ── */
+.container {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'nav_bar nav_bar'
+    'main main-img'
+    'footer footer';
+}
+
+.header  { grid-area: header; }
+.nav_bar { grid-area: nav_bar; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+.main    { grid-area: main; }
+.main_img { grid-area: main-img; }
+.footer  { grid-area: footer; }
+
+/* ── Read More/Less ── */
+#longIntro, #readLess {
+  display: none;
+}
+
+/* ── Hamburger (hidden on desktop) ── */
+#hamburger {
+  display: none;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin: 0;
+  color: #0b0b0c;
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════
+   MOBILE LAYOUT  ≤ 650px
+═══════════════════════════════════════ */
+@media (max-width: 650px) {
+
+  .container {
+    grid-template-areas:
+      'header'
+      'nav_bar'
+      'main'
+      'main-img'
+      'footer';
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    padding: 10px 12px;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+
+  /* Show hamburger on mobile */
+  #hamburger {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Nav: stacked, links hidden by default */
+  .nav_bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 12px;
+  }
+
+  .nav_bar a {
+    display: none;
+    width: 100%;
+    padding: 10px 8px;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0;
+    font-size: 1rem;
+  }
+
+  /* Keep Home visible as anchor */
+  .nav_bar a:first-of-type {
+    display: block;
+  }
+
+  /* When toggled open */
+  .nav_bar.responsive a {
+    display: block;
+  }
+
+  .main {
+    padding: 16px 14px;
+  }
+
+  .main h2, .main h3 {
+    font-size: 1.2rem;
+  }
+
+  #buyTickets {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .main_img img {
+    max-height: 200px;
+  }
+
+  /* Scrollable table on mobile */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  form input,
+  .checkout-step input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 10px 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .exhibition-card {
+    padding: 12px 14px;
+  }
+
+  .main_img {
+    margin: 0;
+    padding: 10px 14px;
+  }
+
+  .map-side #map {
+    height: 280px;
+    min-height: unset;
+  }
+
+  .video-section.main_img .video-wrapper {
+    border-radius: 8px;
+  }
+
+  .footer {
+    padding: 10px;
+    text-align: center;
+  }
+
+  #copyYear {
+    font-size: 12px;
+  }
+}

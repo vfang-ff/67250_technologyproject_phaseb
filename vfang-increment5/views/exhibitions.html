@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+    <title>Exhibitions Page</title>
+
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/hiphopmuseumlogo.png" alt="MonoMuse Museum Logo"> 
+
+            <h1>Exhibitions</h1>
+        </header>
+
+        <nav class="nav_bar">
+            <button id="hamburger" onclick="toggleNav()">&#9776;</button>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+
+        <main class="main">
+            <h2>Current Exhibitions</h2>
+ 
+            <div class="exhibition-card">
+                <h3>Roots: Breaking in the Bronx</h3>
+                <p class="exhibit-dates">Permanent Exhibition</p>
+                <p>
+                    Travel back to the early 1970s South Bronx, where b-boys and b-girls first took to the streets and community centers to battle. This foundational exhibition traces breaking from its roots in James Brown's "Good Foot" through the pioneering crews — the Rock Steady Crew, Dynamic Rockers, and NYC Breakers — who brought it to the world stage. Featuring rare photographs, original flyers, and archival footage.
+                </p>
+            </div>
+ 
+            <div class="exhibition-card">
+                <h3>Funk & Soul: Locking and Popping from the West Coast</h3>
+                <p class="exhibit-dates">Permanent Exhibition</p>
+                <p>
+                    Explore the California roots of funk styles — locking, popping, and boogaloo — born in the 1970s and brought to national attention through Soul Train and The Lockers. This gallery features original costumes worn by Don Campbell and the Electric Boogaloos, performance recordings, and interactive stations where visitors can try the moves themselves.
+                </p>
+            </div>
+ 
+            <div class="exhibition-card">
+                <h3>Cyphers & Battles: The Competitive Spirit</h3>
+                <p class="exhibit-dates">Permanent Exhibition</p>
+                <p>
+                    Step inside the cipher. This exhibition documents the culture of freestyle dance battles — from neighborhood block parties to global competitions like the Red Bull BC One World Final and World of Dance. Video screens run continuous battle footage, and a live cypher floor invites visitors to participate every weekend.
+                </p>
+            </div>
+ 
+            <div class="exhibition-card">
+                <h3>We The People: Hip-Hop Dance on Screen</h3>
+                <p class="exhibit-dates">Rotating Exhibition — Now Through December 2025</p>
+                <p>
+                    A celebration of hip-hop dance in film and media. From <em>Breakin'</em> (1984) and <em>Beat Street</em> to the Step Up franchise and contemporary short films like Marlee Hightower's <em>We The People</em>, this exhibition examines how hip-hop dance has shaped and been shaped by screen culture. Includes an immersive screening room with curated films running throughout the day.
+                </p>
+            </div>
+ 
+            <div class="exhibition-card">
+                <h3>Next Wave: The Future of Hip-Hop Movement</h3>
+                <p class="exhibit-dates">Rotating Exhibition — Opens Spring 2026</p>
+                <p>
+                    A forward-looking exhibition spotlighting emerging styles and the next generation of artists pushing hip-hop dance into new territory — from Memphis jookin and turfing to the fusion of dance with digital art, AI choreography tools, and global diaspora influences. Features commissioned works by six artists under 25.
+                </p>
+            </div>
+        </main>
+
+        <!-- <figure class="main_img">
+                <img src="../static/museum.jpg" alt="museum image">
+        </figure> -->
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+            <!-- MonoMuse. All rights reserved. -->
+        </footer>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
