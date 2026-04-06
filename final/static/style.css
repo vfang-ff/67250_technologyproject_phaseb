@@ -1,4 +1,3 @@
-/* ── CSS Variables ── */
 :root {
   --black: #0a0a0a;
   --gold: #c9a84c;
@@ -29,11 +28,13 @@ body {
 }
 
 #logo {
-  width: 120px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
   display: block;
+  flex-shrink: 0;
 }
 
-/* ── Header ── */
 .header {
   grid-area: header;
   background: var(--black);
@@ -42,6 +43,8 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  height: 116px;
+  overflow: hidden;
 }
 
 .header h1 {
@@ -60,7 +63,6 @@ body {
   padding: 0;
 }
 
-/* ── Nav ── */
 .nav_bar {
   grid-area: nav_bar;
   background: var(--surface);
@@ -92,7 +94,6 @@ nav a:hover {
   font-weight: 700;
 }
 
-/* ── Hamburger (hidden on desktop) ── */
 #hamburger {
   display: none;
   font-size: 1.6rem;
@@ -105,7 +106,6 @@ nav a:hover {
   line-height: 1;
 }
 
-/* ── Main ── */
 .main {
   grid-area: main;
   background: var(--bg);
@@ -116,7 +116,6 @@ nav a:hover {
   color: var(--gold);
 }
 
-/* ── Buy Tickets button ── */
 #buyTickets {
   display: inline-block;
   margin-top: 20px;
@@ -133,7 +132,6 @@ nav a:hover {
   color: var(--black);
 }
 
-/* ── Buttons ── */
 button {
   margin-top: 15px;
   padding: 10px 24px;
@@ -150,12 +148,10 @@ button:hover {
   background-color: var(--gold-light);
 }
 
-/* ── Read More/Less ── */
 #longIntro, #readLess {
   display: none;
 }
 
-/* ── Table ── */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -186,7 +182,6 @@ tr:last-child td {
   border-bottom: none;
 }
 
-/* ── Forms ── */
 form * {
   display: block;
   margin-left: 0;
@@ -233,7 +228,6 @@ input[readonly] {
   border: 1px solid var(--border);
 }
 
-/* ── Checkout steps ── */
 .checkout-step {
   background: var(--surface);
   padding: 20px;
@@ -284,13 +278,13 @@ input[readonly] {
   color: #f08080;
 }
 
-/* ── Exhibition cards ── */
 .exhibition-card {
   background: var(--surface);
   border-radius: 12px;
   padding: 16px 20px;
   margin: 16px 0;
   border-left: 4px solid var(--gold);
+  max-width: 800px;
 }
 
 .exhibition-card h3 {
@@ -305,7 +299,6 @@ input[readonly] {
   margin: 0 0 6px 0;
 }
 
-/* ── main_img grid area ── */
 .main_img {
   grid-area: main-img;
   background: var(--bg);
@@ -335,7 +328,6 @@ input[readonly] {
   display: block;
 }
 
-/* Map: use fixed pixel height, not % of parent */
 .map-side {
   grid-area: main-img;
   background: var(--bg);
@@ -350,7 +342,6 @@ input[readonly] {
   z-index: 0;
 }
 
-/* ── Footer ── */
 .footer {
   grid-area: footer;
   background: var(--black);
@@ -364,7 +355,22 @@ input[readonly] {
   font-size: 13px;
 }
 
-/* ── Grid ── */
+.single-col {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'nav_bar'
+    'main'
+    'footer';
+  min-height: unset;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.single-col .main {
+  width: 100%;
+  max-width: 100%;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -373,17 +379,15 @@ input[readonly] {
     'nav_bar nav_bar'
     'main main-img'
     'footer footer';
+  grid-template-rows: auto auto 1fr auto;
   min-height: 100vh;
 }
 
-/* ── Read More/Less ── */
 #longIntro, #readLess {
   display: none;
 }
 
-/* ═══════════════════════════════
-   MOBILE  ≤ 650px
-═══════════════════════════════ */
+
 @media (max-width: 650px) {
 
   .container {
@@ -396,9 +400,10 @@ input[readonly] {
       'footer';
   }
 
-  .header { flex-wrap: wrap; gap: 10px; padding: 12px 14px; }
-  .header h1 { font-size: 1.1rem; }
-  #logo { width: 70px; }
+  .header { flex-wrap: nowrap; gap: 10px; padding: 12px 14px; align-items: center; }
+  .header h1 { font-size: 1rem; }
+  .header-sub { font-size: 0.75rem; }
+  #logo { width: 55px; height: 55px; flex-shrink: 0; object-fit: contain; }
 
   #hamburger { display: block; margin-bottom: 4px; }
 
@@ -432,7 +437,6 @@ input[readonly] {
   .map-side #map { height: 260px; }
 }
 
-/* ── Confirmation box (checkout page) ── */
 .confirmation-box {
   background: var(--surface);
   border: 2px solid var(--gold);

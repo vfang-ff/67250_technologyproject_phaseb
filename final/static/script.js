@@ -30,13 +30,13 @@ function greeting(hours) {
     var greetingElement = document.getElementById("greeting");
     if (greetingElement) {
         if ((hours >= 20 && hours < 24) || (hours < 5)) {
-            greetingElement.innerHTML = "Good night! Welcome to The Hip-Hop Dance Museum.";
+            greetingElement.innerHTML = "Good Night! Welcome to The Hip-Hop Dance Museum.";
         } else if (hours < 12) {
-            greetingElement.innerHTML = "Good morning! Welcome to The Hip-Hop Dance Museum.";
+            greetingElement.innerHTML = "Good Morning! Welcome to The Hip-Hop Dance Museum.";
         } else if (hours < 18) {
-            greetingElement.innerHTML = "Good afternoon! Welcome to The Hip-Hop Dance Museum.";
+            greetingElement.innerHTML = "Good Afternoon! Welcome to The Hip-Hop Dance Museum.";
         } else {
-            greetingElement.innerHTML = "Good evening! Welcome to The Hip-Hop Dance Museum.";
+            greetingElement.innerHTML = "Good Evening! Welcome to The Hip-Hop Dance Museum.";
         }
     }
 }
