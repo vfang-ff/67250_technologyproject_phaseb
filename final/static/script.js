@@ -1,28 +1,3 @@
-let x = 5;
-let y = 7;
-let z = x + y;
-console.log(z);
-
-let A = "Hello ";
-let B = "world!";
-let C = A + B;
-console.log(C);
-
-function sumnPrint(x1, x2) {
-    console.log(x1 + x2);
-}
-sumnPrint(x, y);
-sumnPrint(A, B);
-
-if (C.length > z) {
-    console.log(C);
-} else if (C.length < z) {
-    console.log(z);
-} else {
-    console.log("good job!");
-}
-
-
 const now = new Date();
 const hours = now.getHours();
 
@@ -107,16 +82,20 @@ function submitPurchase() {
         email.focus();
         return;
     }
-    if (tickets.value === "" || tickets.value < 1 || tickets.value > 10) {
+    if (tickets.value === "" || parseInt(tickets.value) < 1 || parseInt(tickets.value) > 10) {
         alert("Please enter a number of tickets between 1 and 10.");
         tickets.focus();
         return;
     }
 
-    var params = new URLSearchParams({
-        name: name.value.trim(),
-        tickets: tickets.value,
-        date: date.value
-    });
-    window.location.href = "checkout.html?" + params.toString();
+    var total = parseInt(tickets.value) * 15;
+    document.getElementById("purchaseForm").style.display = "none";
+
+    var confirmation = document.getElementById("orderConfirmation");
+    document.getElementById("confirm-name").textContent = name.value.trim();
+    document.getElementById("confirm-date").textContent = date.value;
+    document.getElementById("confirm-tickets").textContent = tickets.value + (tickets.value == 1 ? " ticket" : " tickets");
+    document.getElementById("confirm-total").textContent = "$" + total;
+    confirmation.style.display = "block";
+    confirmation.scrollIntoView({ behavior: "smooth" });
 }

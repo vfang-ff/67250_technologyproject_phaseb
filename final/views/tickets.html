@@ -10,7 +10,7 @@
 </head>
 
 <body onload="addYear()">
-    <div class="container">
+    <div class="container single-col">
         <header class="header">
             <img id="logo" src="../static/hiphopmuseumlogo.png" alt="The Hip-Hop Dance Museum Logo">
             <div>
@@ -25,19 +25,18 @@
             <a href="explore.html">Explore</a>
             <a href="exhibitions.html">Exhibitions</a>
             <a href="tickets.html">Tickets</a>
-            <a href="checkout.html">Checkout</a>
         </nav>
 
         <main class="main">
             <h2>Buy Tickets</h2>
-            <p>Select a date below, then fill in your details to complete your purchase. General admission is $15 per person.</p>
+            <p>Select a date below, then fill in your details to complete your purchase. General admission is<strong style="color: var(--gold);">$15 per person.</strong></p>
 
             <table>
                 <tr>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Price</th>
-                    <th>Tickets</th>
+                    <th>Action</th>
                 </tr>
                 <tr>
                     <td>April 12, 2026</td>
@@ -69,10 +68,10 @@
                 <h3>Your Details</h3>
 
                 <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="e.g. Vanessa Fang">
+                <input type="text" id="name" name="name" placeholder="e.g. Firstname Lastname">
 
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="e.g. vanessa@email.com">
+                <input type="email" id="email" name="email" placeholder="e.g. abc@email.com">
 
                 <label for="tickets">Number of Tickets (max 10)</label>
                 <input type="number" id="tickets" name="tickets" min="1" max="10" placeholder="Enter a number">
@@ -82,6 +81,28 @@
 
                 <button type="button" onclick="submitPurchase()">Confirm Purchase →</button>
             </form>
+
+            <!-- Inline confirmation shown after successful submit -->
+            <div id="orderConfirmation" class="confirmation-box" style="display:none;">
+                <p class="confirmation-icon">🎉</p>
+                <h3>You're going to the museum!</h3>
+                <p>Thank you, <strong id="confirm-name"></strong>. Your order has been received.</p>
+                <div class="confirmation-details">
+                    <div class="confirm-row">
+                        <span class="confirm-label">Date</span>
+                        <span id="confirm-date"></span>
+                    </div>
+                    <div class="confirm-row">
+                        <span class="confirm-label">Tickets</span>
+                        <span id="confirm-tickets"></span>
+                    </div>
+                    <div class="confirm-row">
+                        <span class="confirm-label">Total</span>
+                        <span id="confirm-total"></span>
+                    </div>
+                </div>
+                <p class="confirmation-note">A confirmation will be sent to your email. We look forward to seeing you!</p>
+            </div>
         </main>
 
         <footer class="footer">
@@ -90,4 +111,3 @@
     </div>
 </body>
 </html>
-
